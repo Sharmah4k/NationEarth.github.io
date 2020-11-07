@@ -17,6 +17,7 @@ if (!$conn) {
 <script>
 	alert('form submitted successfully');
 	window.location = 'index.php';
+	
 </script>
 <?php
 mysqli_select_db($conn,'mysiteuserdata');
