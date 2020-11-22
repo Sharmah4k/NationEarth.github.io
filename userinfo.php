@@ -1,6 +1,6 @@
 userinfo.php
 <?php 
-$servername = "https://sharmah4k.github.io/NationEarth.github.io/";
+$servername = "localhost";
 $username = "root";
 $password = "password";
 
@@ -16,7 +16,7 @@ if (!$conn) {
 ?>
 <script>
 	alert('form submitted successfully');
-	window.location = 'index.php';
+	window.location = 'index.html';
 	
 </script>
 <?php

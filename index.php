@@ -1,7 +1,15 @@
- 
+
+
+
 <!DOCTYPE html>
 <html>
-
+<?php
+ 
+ session_start();
+ if(!isset($_SESSION['name'])){
+ header('location:login.php');
+}
+ ?>
 <head>
     <title></title>
     <meta charset="utf-8">
@@ -12,9 +20,12 @@
   
     </head>
     
+
     <body>
-      
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+
+<h1>Welcome <?php echo $_SESSION['name'] ; ?> </h1>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="index.html">Nation Earth</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -26,7 +37,7 @@
         <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
       </li>
 
-       <li class="nav-item">
+     <li class="nav-item">
         <a class="nav-link" href="productDIR/product.php">Products</a>
       </li>
       
@@ -41,10 +52,10 @@
        <li class="nav-item">
         <a class="nav-link" href="#">Contacts</a>
       </li>
-
-      <li class="nav-item">
-<a class="nav-link" href="logout.php">LOGIN</a>
+<li class="nav-item">
+<a class="nav-link" href="logout.php">LOGOUT</a>
 </li>
+      <li class="nav-item">
        
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -52,9 +63,6 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
-  
-    
-
 </nav>
 
 <div class="dropdown">
@@ -224,7 +232,7 @@
 	      			<textarea class="form-control" name="comments"></textarea>
 	      			
 	      		</div>
-	      		  <button type="submit" class="btn btn-success mb-2"><span class="spinner-border spinner-border-sm"></span>Submit</button>
+	      		  <button type="submit" class="btn btn-success mb-2">Submit</button>
 	      	</form>
 	      </div>
 	  </section>
